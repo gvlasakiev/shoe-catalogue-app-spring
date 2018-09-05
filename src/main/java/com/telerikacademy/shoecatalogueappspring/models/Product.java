@@ -10,15 +10,17 @@ public class Product {
     private String name, model, description, imagePath;
     private int price;
     private List<Colors> Colors;
+    private List<Integer> Sizes;
 
     public Product() {
         this.id = count++;
     }
 
-    public Product(String name, List<Colors> colors) {
+    public Product(String name, List<Colors> colors, List<Integer> sizes) {
         Colors = colors;
         this.name = name;
         this.id = count++;
+        Sizes = sizes;
     }
 
     public int getId() {
@@ -39,6 +41,14 @@ public class Product {
 
     public void setColors(List<Colors> colors) {
         Colors = colors;
+    }
+
+    public List<Integer> getSizes() {
+        return Sizes;
+    }
+
+    public void setSizes(List<Integer> sizes) {
+        Sizes = sizes;
     }
 
 }

@@ -18,8 +18,10 @@ public class InMemoryProductRepository implements ProductRepository {
 
     public InMemoryProductRepository() {
         List<Colors> colors = Arrays.asList(Colors.brown, Colors.purple, Colors.red);
-        Product.put(0, new Product("Nike", colors));
-        Product.put(1, new Product("Adiddas", colors));
+        List<Integer> size1 = Arrays.asList(43,42,40,38);
+        List<Integer> size2 = Arrays.asList(36,37,39);
+        Product.put(0, new Product("Nike", colors, size1));
+        Product.put(1, new Product("Adiddas", colors, size2));
     }
 
     @Override
