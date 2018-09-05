@@ -6,6 +6,7 @@ import com.telerikacademy.shoecatalogueappspring.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -24,7 +25,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProducts() {
+    public HashMap<Integer, Product> getProducts() {
         return repository.getProducts();
     }
 

@@ -5,29 +5,31 @@ import com.telerikacademy.shoecatalogueappspring.models.Product;
 import org.springframework.stereotype.Repository;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 import java.util.List;
 
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
 
-    private List<Product> Product = new ArrayList<>();
+    //Product.add(new Product("Nike", colors));
+
+    //Product.add(new Product("Adiddas", colors));
+    private HashMap<Integer, Product> Product = new HashMap<>();
 
     public InMemoryProductRepository() {
         List<Colors> colors = Arrays.asList(Colors.brown, Colors.purple, Colors.red);
-        Product.add(new Product("Nike", colors));
-        Product.add(new Product("Adiddas", colors));
+        Product.put(0, new Product("Nike", colors));
+        Product.put(1, new Product("Adiddas", colors));
     }
 
     @Override
     public void createProduct(Product product) {
-        Product.add(product);
+        //Product.add(product);
+        Product.put(product.getId(), product);
     }
 
     @Override
-    public List<Product> getProducts() {
+    public HashMap<Integer, Product> getProducts() {
         return Product;
     }
 

@@ -6,13 +6,12 @@ import com.telerikacademy.shoecatalogueappspring.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
 public class Products {
-
-    private List<Product> Product = new ArrayList<>();
 
     private ProductService service;
 
@@ -21,7 +20,7 @@ public class Products {
     }
 
     @GetMapping
-    public List<Product> getProducts() {
+    public HashMap<Integer, Product> getProducts() {
         return service.getProducts();
     }
 
