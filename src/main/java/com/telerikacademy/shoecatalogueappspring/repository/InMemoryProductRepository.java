@@ -35,7 +35,7 @@ public class InMemoryProductRepository implements ProductRepository {
 
     @Override
     public Product getProductById(int id) {
-        return null;
+       return Product.get(id);
     }
 
     @Override

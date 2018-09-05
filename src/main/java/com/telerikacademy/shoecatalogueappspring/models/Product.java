@@ -12,6 +12,7 @@ public class Product {
     private List<Colors> Colors;
 
     public Product() {
+        this.id = count++;
     }
 
     public Product(String name, List<Colors> colors) {

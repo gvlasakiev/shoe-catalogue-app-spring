@@ -33,4 +33,10 @@ public class Products {
     public void createProduct(@RequestBody Product product) {
         service.createProduct(product);
     }
+
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable int id) {
+       return service.getProductById(id);
+    }
+
 }
