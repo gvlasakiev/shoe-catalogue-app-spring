@@ -1,5 +1,6 @@
 package com.telerikacademy.shoecatalogueappspring.service;
 
+import com.telerikacademy.shoecatalogueappspring.models.Colors;
 import com.telerikacademy.shoecatalogueappspring.models.Product;
 import com.telerikacademy.shoecatalogueappspring.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +44,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void getProductColors() {
-
+    public List<Colors> getProductColors() {
+        return repository.getProductColors();
     }
 
     @Override

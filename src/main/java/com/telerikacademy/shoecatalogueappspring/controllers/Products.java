@@ -26,4 +26,9 @@ public class Products {
     public List<Product> getProducts() {
         return service.getProducts();
     }
+
+    @GetMapping("getColors")
+    public List<Colors> getProductColors() {
+        return service.getProductColors();
+    }
 }

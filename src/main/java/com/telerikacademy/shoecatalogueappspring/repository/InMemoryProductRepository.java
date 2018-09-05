@@ -4,7 +4,10 @@ import com.telerikacademy.shoecatalogueappspring.models.Colors;
 import com.telerikacademy.shoecatalogueappspring.models.Product;
 import org.springframework.stereotype.Repository;
 
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -13,10 +16,7 @@ public class InMemoryProductRepository implements ProductRepository {
     private List<Product> Product = new ArrayList<>();
 
     public InMemoryProductRepository() {
-        List<Colors> colors = new ArrayList<>();
-        colors.add(Colors.blue);
-        colors.add(Colors.purple);
-        colors.add(Colors.brown);
+        List<Colors> colors = Arrays.asList(Colors.brown, Colors.purple, Colors.red);
         Product.add(new Product("Nike", colors));
         Product.add(new Product("Adiddas", colors));
     }
@@ -47,8 +47,10 @@ public class InMemoryProductRepository implements ProductRepository {
     }
 
     @Override
-    public void getProductColors() {
-
+    public List<Colors> getProductColors() {
+        List<Colors> colors = new ArrayList<>();
+        Collections.addAll(colors, Colors.values());
+        return colors;
     }
 
     @Override
