@@ -2,10 +2,12 @@ package com.telerikacademy.shoecatalogueappspring.repository;
 
 import com.telerikacademy.shoecatalogueappspring.models.Colors;
 import com.telerikacademy.shoecatalogueappspring.models.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class InMemoryProductRepository implements ProductRepository {
 
     private List<Product> Product = new ArrayList<>();
