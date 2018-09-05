@@ -40,12 +40,12 @@ public class InMemoryProductRepository implements ProductRepository {
 
     @Override
     public void updateProduct(int id, Product product) {
-
+        Product.put(id, product);
     }
 
     @Override
     public void deleteProduct(int id) {
-
+        Product.remove(id);
     }
 
     @Override

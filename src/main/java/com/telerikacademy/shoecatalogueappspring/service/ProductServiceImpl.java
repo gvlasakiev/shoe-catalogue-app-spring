@@ -36,12 +36,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void updateProduct(int id, Product product) {
-
+        repository.updateProduct(id, product);
     }
 
     @Override
     public void deleteProduct(int id) {
-
+        repository.deleteProduct(id);
     }
 
     @Override

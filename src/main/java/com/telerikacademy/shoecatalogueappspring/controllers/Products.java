@@ -39,4 +39,15 @@ public class Products {
        return service.getProductById(id);
     }
 
+    @PutMapping("/{id}")
+    public void updateProduct (@PathVariable int id, @RequestBody Product product) {
+        service.updateProduct(id, product);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProduct(@PathVariable int id) {
+        service.deleteProduct(id);
+    }
+
+
 }
