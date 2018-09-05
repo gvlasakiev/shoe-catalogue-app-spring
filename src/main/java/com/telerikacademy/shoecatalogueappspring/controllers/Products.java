@@ -24,9 +24,14 @@ public class Products {
         return service.getProducts();
     }
 
-    @GetMapping("getColors")
+    @GetMapping("/colors")
     public List<Colors> getProductColors() {
         return service.getProductColors();
+    }
+
+    @GetMapping("/sizes")
+    public List<Integer> getProductSizes() {
+       return service.getProductSize();
     }
 
     @PostMapping("/create")

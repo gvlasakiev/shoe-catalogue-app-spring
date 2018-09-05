@@ -11,9 +11,9 @@ import java.util.List;
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
 
-    //Product.add(new Product("Nike", colors));
+    private static final int MIN_SHOE_SIZE = 35;
+    private static final int MAX_SHOE_SIZE = 46;
 
-    //Product.add(new Product("Adiddas", colors));
     private HashMap<Integer, Product> Product = new HashMap<>();
 
     public InMemoryProductRepository() {
@@ -56,7 +56,11 @@ public class InMemoryProductRepository implements ProductRepository {
     }
 
     @Override
-    public void getProductSize() {
-
+    public List<Integer> getProductSize() {
+        List<Integer> productSize= new ArrayList<>();
+        for (int a = MIN_SHOE_SIZE; a <= MAX_SHOE_SIZE ; a++) {
+            productSize.add(a);
+        }
+        return productSize;
     }
 }

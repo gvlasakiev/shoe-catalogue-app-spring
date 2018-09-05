@@ -13,5 +13,5 @@ public interface ProductService {
     void updateProduct(int id, Product product);
     void deleteProduct(int id);
     List<Colors> getProductColors();
-    void getProductSize();
+    List<Integer> getProductSize();
 }

@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void getProductSize() {
-
+    public List<Integer> getProductSize() {
+       return repository.getProductSize();
     }
 }
