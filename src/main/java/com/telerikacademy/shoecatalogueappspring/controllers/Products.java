@@ -3,9 +3,7 @@ package com.telerikacademy.shoecatalogueappspring.controllers;
 import com.telerikacademy.shoecatalogueappspring.models.Colors;
 import com.telerikacademy.shoecatalogueappspring.models.Product;
 import com.telerikacademy.shoecatalogueappspring.service.ProductService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,5 +28,10 @@ public class Products {
     @GetMapping("getColors")
     public List<Colors> getProductColors() {
         return service.getProductColors();
+    }
+
+    @PostMapping("/create")
+    public void createProduct(@RequestBody Product product) {
+        service.createProduct(product);
     }
 }
