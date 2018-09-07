@@ -6,11 +6,11 @@ import java.util.List;
 public class Product {
 
     private static int count = 0;
-    private int id;
-    private String name, model, description, imagePath;
-    private int price;
-    private List<Colors> Colors;
-    private List<Integer> Sizes;
+    public final int id;
+    public String name, model, description, imagePath;
+    public int price;
+    public List<Colors> Colors;
+    public List<Integer> Sizes;
 
     public Product() {
         this.id = count++;
