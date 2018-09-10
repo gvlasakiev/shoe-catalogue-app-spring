@@ -9,18 +9,18 @@ public class Product {
     public final int id;
     public String name, model, description, imagePath;
     public int price;
-    public List<Colors> Colors;
-    public List<Integer> Sizes;
+    public List<Colors> colors;
+    public List<Integer> sizes;
 
     public Product() {
         this.id = count++;
     }
 
     public Product(String name, List<Colors> colors, List<Integer> sizes) {
-        Colors = colors;
+        this.colors = colors;
         this.name = name;
         this.id = count++;
-        Sizes = sizes;
+        this.sizes = sizes;
     }
 
     public int getId() {
@@ -36,19 +36,19 @@ public class Product {
     }
 
     public List<Colors> getColors() {
-        return Colors;
+        return colors;
     }
 
     public void setColors(List<Colors> colors) {
-        Colors = colors;
+        this.colors = colors;
     }
 
     public List<Integer> getSizes() {
-        return Sizes;
+        return sizes;
     }
 
     public void setSizes(List<Integer> sizes) {
-        Sizes = sizes;
+        this.sizes = sizes;
     }
 
 }
