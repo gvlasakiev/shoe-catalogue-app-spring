@@ -6,11 +6,14 @@ import java.util.List;
 public class Product {
 
     private static int count = 0;
-    public final int id;
-    public String name, model, description, imagePath;
-    public int price;
-    public List<Colors> colors;
-    public List<Integer> sizes;
+    private final int id;
+    private String name;
+    private String model;
+    private String description;
+    private String imagePath;
+    private int price;
+    private List<Colors> colors;
+    private List<Integer> sizes;
 
     public Product() {
         this.id = count++;
@@ -49,6 +52,30 @@ public class Product {
 
     public void setSizes(List<Integer> sizes) {
         this.sizes = sizes;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
 }
