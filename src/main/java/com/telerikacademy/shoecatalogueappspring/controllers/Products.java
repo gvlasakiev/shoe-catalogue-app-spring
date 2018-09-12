@@ -20,7 +20,7 @@ public class Products {
     }
 
     @GetMapping
-    public HashMap<Integer, Product> getProducts() {
+    public List<Product> getProducts() {
         return service.getProducts();
     }
 

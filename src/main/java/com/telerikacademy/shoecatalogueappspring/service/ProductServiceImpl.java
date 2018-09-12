@@ -25,7 +25,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public HashMap<Integer, Product> getProducts() {
+    public List<Product> getProducts() {
         return repository.getProducts();
     }
 

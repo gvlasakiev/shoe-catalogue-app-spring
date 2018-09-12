@@ -31,8 +31,8 @@ public class InMemoryProductRepository implements ProductRepository {
     }
 
     @Override
-    public HashMap<Integer, Product> getProducts() {
-        return Product;
+    public List<Product> getProducts() {
+        return new ArrayList<>(Product.values());
     }
 
     @Override
