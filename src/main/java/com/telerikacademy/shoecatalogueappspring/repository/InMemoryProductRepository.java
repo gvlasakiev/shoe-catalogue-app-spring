@@ -8,7 +8,6 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 
-@Repository
 public class InMemoryProductRepository implements ProductRepository {
 
     private static final int MIN_SHOE_SIZE = 35;

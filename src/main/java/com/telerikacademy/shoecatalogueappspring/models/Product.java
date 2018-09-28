@@ -5,8 +5,7 @@ import java.util.List;
 
 public class Product {
 
-    private static int count = 0;
-    private final int id;
+    private int id;
     private String name;
     private String model;
     private String description;
@@ -15,14 +14,14 @@ public class Product {
     private List<Colors> colors;
     private List<Integer> sizes;
 
-    public Product() {
-        this.id = count++;
+    public Product () {
+
     }
+
 
     public Product(String name, List<Colors> colors, List<Integer> sizes) {
         this.colors = colors;
         this.name = name;
-        this.id = count++;
         this.sizes = sizes;
     }
 
@@ -78,4 +77,15 @@ public class Product {
         this.price = price;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 }
