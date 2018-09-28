@@ -27,7 +27,7 @@ public class Products {
     }
 
     @GetMapping("/colors")
-    public List<Colors> getProductColors(HttpServletRequest request) {
+    public List<String> getProductColors(HttpServletRequest request) {
         Date date = new Date();
         System.out.println("New Get Request: Colors Requested at " + date + "; IP: " + request.getRemoteAddr());
         return service.getProductColors();

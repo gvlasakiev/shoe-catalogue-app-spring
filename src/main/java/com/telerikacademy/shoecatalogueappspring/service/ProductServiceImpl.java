@@ -45,7 +45,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Colors> getProductColors() {
+    public List<String> getProductColors() {
         return repository.getProductColors();
     }
 

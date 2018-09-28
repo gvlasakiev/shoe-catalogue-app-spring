@@ -12,6 +12,6 @@ public interface ProductService {
     Product getProductById(int id);
     void updateProduct(int id, Product product);
     void deleteProduct(int id);
-    List<Colors> getProductColors();
+    List<String> getProductColors();
     List<Integer> getProductSize();
 }

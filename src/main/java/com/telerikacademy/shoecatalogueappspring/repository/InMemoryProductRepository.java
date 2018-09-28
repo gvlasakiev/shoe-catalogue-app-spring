@@ -50,10 +50,15 @@ public class InMemoryProductRepository implements ProductRepository {
     }
 
     @Override
-    public List<Colors> getProductColors() {
+    public List<String> getProductColors() {
         List<Colors> colors = new ArrayList<>();
         Collections.addAll(colors, Colors.values());
-        return colors;
+        List<String> colorStrings = new ArrayList<>();
+        for (Colors c :
+                colors) {
+            colorStrings.add(c.toString());
+        }
+        return colorStrings;
     }
 
     @Override

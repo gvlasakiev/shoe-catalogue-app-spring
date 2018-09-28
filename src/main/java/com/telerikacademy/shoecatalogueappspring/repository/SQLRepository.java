@@ -47,8 +47,21 @@ public class SQLRepository implements ProductRepository{
 
     @Override
     public Product getProductById(int id) {
-        return null;
+        String query = "select * from shoes where shoes.ShoeID = " + id + ";";
+        Product product = new Product();
+        try {
+            Connection connection = DriverManager.getConnection(dbUrl, username, password);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            product = readProductById(resultSet);
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+
+        return product;
     }
+
 
     @Override
     public void updateProduct(int id, Product product) {
@@ -61,9 +74,21 @@ public class SQLRepository implements ProductRepository{
     }
 
     @Override
-    public List<Colors> getProductColors() {
-        return null;
+    public List<String> getProductColors() {
+        String query = "select c.Name from colors as c";
+        List<String> colors = new ArrayList<>();
+        try {
+            Connection connection = DriverManager.getConnection(dbUrl, username, password);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            colors = readColors(resultSet);
+        } catch (SQLException e){
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+        return colors;
     }
+
 
     @Override
     public List<Integer> getProductSize() {
@@ -82,5 +107,24 @@ public class SQLRepository implements ProductRepository{
             products.add(p);
         }
         return products;
+    }
+
+    private Product readProductById(ResultSet productsData) throws SQLException {
+        Product product = new Product();
+        productsData.next();
+        product.setId(productsData.getInt("ShoeID"));
+        product.setName(productsData.getString("Name"));
+        product.setModel(productsData.getString("Model"));
+        product.setDescription(productsData.getString("Description"));
+        product.setPrice(productsData.getInt("price"));
+        return product;
+    }
+
+    private List<String> readColors(ResultSet resultSet) throws SQLException {
+        List<String> colors = new ArrayList<>();
+        while(resultSet.next()){
+            colors.add(resultSet.getString("Name"));
+        }
+        return colors;
     }
 }
